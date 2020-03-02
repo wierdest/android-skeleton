@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/titleFragment"
-        android:name="me.wierdest.mindsetquest.title.TitleFragment"
+        android:name="me.wierdest.myapplication.title.TitleFragment"
         android:label="TitleFragment" tools:layout="@layout/fragment_title" >
         <action
             android:id="@+id/action_titleFragment_to_homeFragment"
@@ -15,19 +15,19 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="me.wierdest.mindsetquest.home.HomeFragment"
+        android:name="me.wierdest.myapplication.home.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="me.wierdest.mindsetquest.about.AboutFragment"
+        android:name="me.wierdest.myapplication.about.AboutFragment"
         android:label="AboutFragment"
         tools:layout="@layout/fragment_about"/>
 
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="me.wierdest.mindsetquest.settings.SettingsFragment"
+        android:name="me.wierdest.myapplication.settings.SettingsFragment"
         android:label="SettingsFragment"
         tools:layout="@layout/fragment_settings"/>
 </navigation>

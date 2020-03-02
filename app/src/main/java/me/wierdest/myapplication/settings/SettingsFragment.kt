@@ -1,4 +1,4 @@
-package me.wierdest.mindsetquest.settings
+package me.wierdest.myapplication.settings
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,9 +8,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import me.wierdest.mindsetquest.R
-import me.wierdest.mindsetquest.database.MyViewModel
-import me.wierdest.mindsetquest.databinding.FragmentSettingsBinding
+import me.wierdest.myapplication.R
+import me.wierdest.myapplication.database.MyViewModel
+import me.wierdest.myapplication.databinding.FragmentSettingsBinding
 
 class SettingsFragment : Fragment() {
 

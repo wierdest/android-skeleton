@@ -15,7 +15,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.1"
     defaultConfig {
-        applicationId "me.wierdest.mindsetquest"
+        applicationId "me.wierdest.myapplicatio"
         minSdkVersion 15
         targetSdkVersion 29
         versionCode 1

@@ -1,11 +1,11 @@
-package me.wierdest.mindsetquest.about
+package me.wierdest.myapplication.about
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import me.wierdest.mindsetquest.R
+import me.wierdest.myapplication.R
 
 class AboutFragment : Fragment() {
 

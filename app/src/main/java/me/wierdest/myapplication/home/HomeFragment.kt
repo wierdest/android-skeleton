@@ -1,4 +1,4 @@
-package me.wierdest.mindsetquest.home
+package me.wierdest.myapplication.home
 
 import android.os.Bundle
 import android.util.Log
@@ -9,9 +9,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import me.wierdest.mindsetquest.R
-import me.wierdest.mindsetquest.database.MyViewModel
-import me.wierdest.mindsetquest.databinding.FragmentHomeBinding
+import me.wierdest.myapplication.R
+import me.wierdest.myapplication.database.MyViewModel
+import me.wierdest.myapplication.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 

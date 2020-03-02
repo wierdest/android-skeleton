@@ -1,4 +1,4 @@
-package me.wierdest.mindsetquest.database
+package me.wierdest.myapplication.database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

@@ -1,4 +1,4 @@
-package me.wierdest.mindsetquest.database
+package me.wierdest.myapplication.database
 
 import android.app.Application
 import androidx.lifecycle.ViewModel

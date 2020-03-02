@@ -1,4 +1,4 @@
-package me.wierdest.mindsetquest
+package me.wierdest.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,7 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import me.wierdest.mindsetquest.databinding.ActivityMainBinding
+import me.wierdest.myapplication.databinding.ActivityMainBinding
 
 /**
  * Basic activity template set up with databinding,

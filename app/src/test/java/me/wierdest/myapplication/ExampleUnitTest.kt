@@ -1,4 +1,4 @@
-package me.wierdest.mindsetquest
+package me.wierdest.myapplication
 
 import org.junit.Test
 
