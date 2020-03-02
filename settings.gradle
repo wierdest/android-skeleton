@@ -1,2 +1,2 @@
-rootProject.name='MindSetQuest'
+rootProject.name='My Application'
 include ':app'
