@@ -11,6 +11,6 @@ https://developer.android.com/training/appbar/setting-up
 
 https://developer.android.com/guide/navigation/navigation-ui
 
-https://developer.android.com/reference/android/arch/lifecycle/Transformations#map
+https://developer.android.com/reference/androidx/lifecycle/Transformations
 
 Gradle files include some other dependencies used for various projects I have.
