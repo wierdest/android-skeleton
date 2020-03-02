@@ -1,12 +1,9 @@
-package me.wierdest.myapplication.database
+package me.wierdest.mindsetquest.database
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import kotlinx.coroutines.*
-import java.lang.StringBuilder
 
 class MyViewModel(
 
