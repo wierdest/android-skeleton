@@ -1,4 +1,4 @@
-package me.wierdest.myapplication.title
+package me.wierdest.mindsetquest.title
 
 import android.app.AlertDialog
 import android.os.Bundle
@@ -9,11 +9,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import me.wierdest.myapplication.R
-import me.wierdest.myapplication.database.MyDatabase
-import me.wierdest.myapplication.database.MyViewModel
-import me.wierdest.myapplication.database.MyViewModelFactory
-import me.wierdest.myapplication.databinding.FragmentTitleBinding
+import me.wierdest.mindsetquest.R
+import me.wierdest.mindsetquest.database.MyDatabase
+import me.wierdest.mindsetquest.database.MyViewModel
+import me.wierdest.mindsetquest.database.MyViewModelFactory
+import me.wierdest.mindsetquest.databinding.FragmentTitleBinding
 
 
 /**

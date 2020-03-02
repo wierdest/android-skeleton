@@ -1,4 +1,4 @@
-package me.wierdest.myapplication.database
+package me.wierdest.mindsetquest.database
 
 import android.content.Context
 import androidx.room.Database
