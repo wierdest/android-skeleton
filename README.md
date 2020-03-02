@@ -1,5 +1,5 @@
 # android-skeleton
-a barebones android application project set up with navigation, databinding, room, and a viewmodel
+a barebones android application project set up with navigation, databinding, room, and a viewmodel.
 
 DISCLAIMER: I have absolutely no formal training as a programmer
 
@@ -13,4 +13,4 @@ https://developer.android.com/guide/navigation/navigation-ui
 
 https://developer.android.com/reference/android/arch/lifecycle/Transformations#map
 
-Gradle files include some other dependencies used for other projects I have.
+Gradle files include some other dependencies used for various projects I have.
