@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="me.wierdest.myapplication.database.Tab" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        app:contentPadding="8dp"
+        android:layout_margin="8dp"
+        android:id="@+id/sessionItemCard"
+        app:cardBackgroundColor="@color/colorPrimaryDark"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        app:cardPreventCornerOverlap="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tabId"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:textAllCaps="true"
+                    android:gravity="center"
+                    tools:text="01"
+                    app:tabItemId="@{item}"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+                    android:layout_marginLeft="4dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tabName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tabId"
+                    app:layout_constraintTop_toTopOf="@id/tabId"
+                    app:tabItemName="@{item}"
+                    tools:text="ADDED IN 09/12/20 at..." />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

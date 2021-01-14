@@ -9,10 +9,10 @@ import androidx.room.RoomDatabase
 /**
  * Basic room database set up with destructive migration
  */
-@Database(entities = [Session::class], version = 1, exportSchema = false)
+@Database(entities = [Tab::class], version = 1, exportSchema = false)
 abstract class MyDatabase : RoomDatabase() {
 
-    abstract val sessionDAO: SessionDAO
+    abstract val tabDAO: TabDAO
 
     companion object {
         @Volatile

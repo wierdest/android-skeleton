@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:fragment="me.wierdest.myapplication.settings.SettingsFragment"
+        app:title="Tab Preferences">
+
+        <SeekBarPreference
+            app:key="speed"
+            app:defaultValue="50"
+            app:min="0"
+            app:summary="Scrolling speed. Use the volume button to change it" />
+
+    </PreferenceCategory>
+
+
+
+</PreferenceScreen>

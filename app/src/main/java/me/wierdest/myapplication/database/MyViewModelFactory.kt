@@ -7,7 +7,7 @@ import java.lang.IllegalArgumentException
 
 class MyViewModelFactory(
 
-    private val sessionDataSource: SessionDAO,
+    private val tabDataSource: TabDAO,
     private val application: Application
 
 ) : ViewModelProvider.Factory {
@@ -15,7 +15,7 @@ class MyViewModelFactory(
 
         if (modelClass.isAssignableFrom(MyViewModel::class.java)) {
             return MyViewModel(
-                sessionDataSource,
+                tabDataSource,
                 application
             ) as T
         }

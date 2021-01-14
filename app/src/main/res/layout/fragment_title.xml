@@ -12,30 +12,30 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:id="@+id/titleLayout"
+        android:id="@+id/tabScroll"
         android:background="@color/colorPrimary"
         android:layout_height="match_parent">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/newSessionButton"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/new_button"
-            app:layout_constraintBottom_toTopOf="@id/continueSessionButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/continueSessionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:text="@string/continue_button"
+            android:layout_margin="32dp"
+            android:id="@+id/addButton"
+            app:srcCompat="@android:drawable/ic_input_add"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tabList"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/addButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_margin="8dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

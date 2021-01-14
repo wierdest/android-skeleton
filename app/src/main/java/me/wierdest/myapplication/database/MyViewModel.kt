@@ -2,31 +2,22 @@ package me.wierdest.myapplication.database
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.Transformations
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import kotlinx.coroutines.*
+import me.wierdest.myapplication.utilities.convertLongToDateString
 
 class MyViewModel(
 
-    private val sessionDatabase: SessionDAO,
+    private val tabDatabase: TabDAO,
     application: Application
 
 ) : AndroidViewModel(application) {
 
-    val lastSession = sessionDatabase.getLastSession()
+    private val TAG = javaClass.simpleName
 
-
-    /**
-     * Transformations
-     */
-    val lastSessionId  = Transformations.map(lastSession) {
-        when (it) {
-            null -> { // do nothing
-            }
-            else -> {
-                return@map it.sessionId
-            }
-        }
-    }
+    val lastTab = tabDatabase.getLastTabLive()
+    val allTabs = tabDatabase.getAllTabsLive()
 
     /**
      * Coroutines
@@ -38,41 +29,78 @@ class MyViewModel(
      * Basic add & remove functions
      */
 
-    fun addNewSession() {
+    /**
+     * Safely adding unique sources:
+     */
+    private val _isSourceUnique = MutableLiveData<Boolean>()
+    val isSourceUnique: LiveData<Boolean> = _isSourceUnique
+    fun resetIsSourceUnique() {
+        uiScope.launch { _isSourceUnique.value = null }
+    }
+
+    fun addNewTab(source: String) {
         uiScope.launch {
-            insertSession(Session())
+            _isSourceUnique.value = withContext(Dispatchers.IO) {
+                val testSource = tabDatabase.getTabByRaw(source)
+                if (testSource == null) {
+                    tabDatabase.insert(Tab(raw = source, name = "Added in ${System.currentTimeMillis().convertLongToDateString()}"))
+                    true
+                } else {
+                    false
+                }
+            }
         }
     }
 
-    private suspend fun insertSession(item: Session) {
-        withContext(Dispatchers.IO) {
-            sessionDatabase.insert(item)
+    fun addNameToLastTab(name: String) {
+        uiScope.launch {
+            withContext(Dispatchers.IO) {
+                val lastTab = tabDatabase.getLastTab()
+                lastTab?.let {
+                    it.name = name
+                    tabDatabase.update(it)
+                }
+
+            }
         }
     }
 
-    fun removeSession(id: Long) {
+    fun removeTab(id: Long) {
         uiScope.launch {
-            deleteSession(id)
-        }
-    }
-    private suspend fun deleteSession(id: Long) {
-        withContext(Dispatchers.IO) {
-            sessionDatabase.clearSession(id)
+            withContext(Dispatchers.IO) {
+                tabDatabase.clearTab(id)
+            }
         }
     }
 
     fun clearAll() {
         uiScope.launch {
             // add other clear functions from other DAOs as needed
-            clearAllSessions()
+            withContext(Dispatchers.IO) {
+                tabDatabase.clear()
+            }
 
         }
     }
-    private suspend fun clearAllSessions() {
-        withContext(Dispatchers.IO) {
-            sessionDatabase.clear()
+
+    /**
+     * GET FUNCTIONS
+     */
+    private val _tabToRead = MutableLiveData<Tab>()
+    val tabToRead: LiveData<Tab> = _tabToRead
+    fun pickTabToRead(id: Long) {
+        uiScope.launch {
+            _tabToRead.value = withContext(Dispatchers.IO) {
+                tabDatabase.getById(id)
+            }
         }
     }
+    fun resetTabToRead() {
+        uiScope.launch {
+            _tabToRead.value = null
+        }
+    }
+
 
 
 

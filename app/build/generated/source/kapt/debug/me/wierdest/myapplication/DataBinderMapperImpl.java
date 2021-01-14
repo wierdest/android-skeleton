@@ -18,7 +18,9 @@ import java.util.List;
 import me.wierdest.myapplication.databinding.ActivityMainBindingImpl;
 import me.wierdest.myapplication.databinding.FragmentHomeBindingImpl;
 import me.wierdest.myapplication.databinding.FragmentSettingsBindingImpl;
+import me.wierdest.myapplication.databinding.FragmentTabSnatcherBindingImpl;
 import me.wierdest.myapplication.databinding.FragmentTitleBindingImpl;
+import me.wierdest.myapplication.databinding.ListItemTabBindingImpl;
 
 public class DataBinderMapperImpl extends DataBinderMapper {
   private static final int LAYOUT_ACTIVITYMAIN = 1;
@@ -27,15 +29,21 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_FRAGMENTSETTINGS = 3;
 
-  private static final int LAYOUT_FRAGMENTTITLE = 4;
+  private static final int LAYOUT_FRAGMENTTABSNATCHER = 4;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(4);
+  private static final int LAYOUT_FRAGMENTTITLE = 5;
+
+  private static final int LAYOUT_LISTITEMTAB = 6;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(6);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(me.wierdest.myapplication.R.layout.activity_main, LAYOUT_ACTIVITYMAIN);
     INTERNAL_LAYOUT_ID_LOOKUP.put(me.wierdest.myapplication.R.layout.fragment_home, LAYOUT_FRAGMENTHOME);
     INTERNAL_LAYOUT_ID_LOOKUP.put(me.wierdest.myapplication.R.layout.fragment_settings, LAYOUT_FRAGMENTSETTINGS);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(me.wierdest.myapplication.R.layout.fragment_tab_snatcher, LAYOUT_FRAGMENTTABSNATCHER);
     INTERNAL_LAYOUT_ID_LOOKUP.put(me.wierdest.myapplication.R.layout.fragment_title, LAYOUT_FRAGMENTTITLE);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(me.wierdest.myapplication.R.layout.list_item_tab, LAYOUT_LISTITEMTAB);
   }
 
   @Override
@@ -65,11 +73,23 @@ public class DataBinderMapperImpl extends DataBinderMapper {
           }
           throw new IllegalArgumentException("The tag for fragment_settings is invalid. Received: " + tag);
         }
+        case  LAYOUT_FRAGMENTTABSNATCHER: {
+          if ("layout/fragment_tab_snatcher_0".equals(tag)) {
+            return new FragmentTabSnatcherBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_tab_snatcher is invalid. Received: " + tag);
+        }
         case  LAYOUT_FRAGMENTTITLE: {
           if ("layout/fragment_title_0".equals(tag)) {
             return new FragmentTitleBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for fragment_title is invalid. Received: " + tag);
+        }
+        case  LAYOUT_LISTITEMTAB: {
+          if ("layout/list_item_tab_0".equals(tag)) {
+            return new ListItemTabBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for list_item_tab is invalid. Received: " + tag);
         }
       }
     }
@@ -116,22 +136,25 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerBrLookup {
-    static final SparseArray<String> sKeys = new SparseArray<String>(2);
+    static final SparseArray<String> sKeys = new SparseArray<String>(3);
 
     static {
       sKeys.put(0, "_all");
-      sKeys.put(1, "myViewModel");
+      sKeys.put(1, "item");
+      sKeys.put(2, "myViewModel");
     }
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(4);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(6);
 
     static {
       sKeys.put("layout/activity_main_0", me.wierdest.myapplication.R.layout.activity_main);
       sKeys.put("layout/fragment_home_0", me.wierdest.myapplication.R.layout.fragment_home);
       sKeys.put("layout/fragment_settings_0", me.wierdest.myapplication.R.layout.fragment_settings);
+      sKeys.put("layout/fragment_tab_snatcher_0", me.wierdest.myapplication.R.layout.fragment_tab_snatcher);
       sKeys.put("layout/fragment_title_0", me.wierdest.myapplication.R.layout.fragment_title);
+      sKeys.put("layout/list_item_tab_0", me.wierdest.myapplication.R.layout.list_item_tab);
     }
   }
 }

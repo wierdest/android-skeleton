@@ -1,13 +1,18 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">tiny tabby</string>
     <string name="menu_about_title">About</string>
     <string name="menu_settings_title">Settings</string>
-    <string name="settings_clear_all_button">Clear all sessions</string>
-    <string name="settings_no_sessions_to_clear_button">No sessions to clear</string>
+    <string name="settings_clear_all_button">Clear all tabs</string>
+    <string name="settings_no_tabs_to_clear_button">No tabs to clear</string>
     <string name="new_button">New</string>
     <string name="continue_button">Continue</string>
     <string name="home_text_view">This is your application\'s Home screen</string>
     <string name="home_session_text_view_1">Session:</string>
     <string name="home_session_text_view_2">Created in:</string>
     <string name="about_text_view">This is just the basic skeleton of your application</string>
+    <string name="alert_on_open_doc_ext_unsuccessful">There wasn\'t an app suitable to open the chosen document</string>
+    <string name="alert_no">No</string>
+    <string name="alert_sure">Sure</string>
+    <string name="alert_ok">OK</string>
+    <string name="alert_clipboard_is_ok">Is this OK?</string>
 </resources>

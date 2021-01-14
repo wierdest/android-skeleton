@@ -4,10 +4,14 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "session_table")
-data class Session(
+@Entity(tableName = "tab_table")
+data class Tab(
     @PrimaryKey(autoGenerate = true)
-    var sessionId: Long = 0L,
+    var tabId: Long = 0L,
+    @ColumnInfo(name = "raw")
+    var raw: String,
+    @ColumnInfo(name = "name")
+    var name: String = "",
     @ColumnInfo(name = "creationTimeMilli")
     val creationTimeMilli: Long = System.currentTimeMillis(),
     @ColumnInfo(name = "lastAccessTimeMilli")

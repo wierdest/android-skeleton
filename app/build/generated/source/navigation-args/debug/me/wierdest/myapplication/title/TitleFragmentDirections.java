@@ -13,4 +13,9 @@ public class TitleFragmentDirections {
   public static NavDirections actionTitleFragmentToHomeFragment() {
     return new ActionOnlyNavDirections(R.id.action_titleFragment_to_homeFragment);
   }
+
+  @NonNull
+  public static NavDirections actionTitleFragmentToTabSnatcherFragment() {
+    return new ActionOnlyNavDirections(R.id.action_titleFragment_to_tabSnatcherFragment);
+  }
 }

@@ -14,8 +14,8 @@ public class FragmentTitleBindingImpl extends FragmentTitleBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.newSessionButton, 1);
-        sViewsWithIds.put(R.id.continueSessionButton, 2);
+        sViewsWithIds.put(R.id.addButton, 1);
+        sViewsWithIds.put(R.id.tabList, 2);
     }
     // views
     // variables
@@ -28,11 +28,11 @@ public class FragmentTitleBindingImpl extends FragmentTitleBinding  {
     }
     private FragmentTitleBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (com.google.android.material.button.MaterialButton) bindings[2]
-            , (com.google.android.material.button.MaterialButton) bindings[1]
+            , (com.google.android.material.floatingactionbutton.FloatingActionButton) bindings[1]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[2]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
             );
-        this.titleLayout.setTag(null);
+        this.tabScroll.setTag(null);
         setRootTag(root);
         // listeners
         invalidateAll();

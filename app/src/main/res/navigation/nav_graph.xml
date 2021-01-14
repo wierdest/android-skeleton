@@ -11,6 +11,9 @@
         <action
             android:id="@+id/action_titleFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_titleFragment_to_tabSnatcherFragment"
+            app:destination="@id/tabSnatcherFragment" />
     </fragment>
 
     <fragment
@@ -30,4 +33,9 @@
         android:name="me.wierdest.myapplication.settings.SettingsFragment"
         android:label="SettingsFragment"
         tools:layout="@layout/fragment_settings"/>
+    <fragment
+        android:id="@+id/tabSnatcherFragment"
+        android:name="me.wierdest.myapplication.tabsnatcher.TabSnatcherFragment"
+        android:label="TabSnatcherFragment"
+        tools:layout="@layout/fragment_tab_snatcher"/>
 </navigation>
